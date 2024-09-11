@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Price Chart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Commodity Price Analysis</h1>
+
+        <!-- Button to trigger input popup -->
+        <button id="addDataBtn">Add Data Point</button>
+
+        <!-- Filter Options -->
+        <select id="timeFilter">
+            <option value="10min">Last 10 Minutes</option>
+            <option value="1hour">Last 1 Hour</option>
+            <option value="all">Show All</option>
+        </select>
+
+        <!-- Chart Canvas -->
+        <canvas id="priceChart" width="600" height="400"></canvas>
+
+        <!-- Input Modal -->
+        <div id="inputModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Price Data</h2>
+                <form id="dataForm">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,9 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-atlasDb = process.env.ATLASDB_URL
+// MongoDB connection string from .env file
+const atlasDb = process.env.ATLASDB_URL;
 
-// Connect to MongoDB
+// Connect to MongoDB Atlas
 mongoose.connect(atlasDb, {
     useNewUrlParser: true,
     useUnifiedTopology: true

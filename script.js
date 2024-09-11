@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch('/api/data');
         const data = await response.json();
         
-        chart.data.labels = data.map(item => item.timestamp);
+        chart.data.labels = data.map(item => new Date(item.timestamp));
         chart.data.datasets[0].data = data.map(item => item.price);
         chart.update();
     };
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(`/api/data?filter=${filterValue}`);
         const data = await response.json();
 
-        priceChart.data.labels = data.map(item => item.timestamp);
+        priceChart.data.labels = data.map(item => new Date(item.timestamp));
         priceChart.data.datasets[0].data = data.map(item => item.price);
         priceChart.update();
     });

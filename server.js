@@ -6,8 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+atlasDb = process.env.ATLASDB_URL
+
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://rohit-nainwaya:Re%24o%40123@cluster0.ifpybyh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(atlasDb, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
